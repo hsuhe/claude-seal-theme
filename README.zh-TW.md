@@ -28,6 +28,18 @@ claude plugin install seal-theme@claude-seal-theme
 
 預設裝在 user 範圍，之後每個 session 都會套用，Claude 桌面版的 Code 分頁也會載入。開新對話就會看到主題。動態背景在桌面版與手機版顯示，回覆框樣式只在桌面版。
 
+## 外掛會執行什麼
+
+這個外掛是 mod：`hooks/register.tsx` 是 hooks module，Claude Code 會載入它並以你的權限執行（所有 mod 都是這樣）。它做的事只有以下這些：
+
+- session 開始時，套用海豹配色和動態背景（`$.theme.set`）。如果 App 畫不出來，會在狀態列顯示原因（`$.ui.status`）；如果配色檢查發現會讓桌面版畫不出主題的問題，會用 toast 顯示那一行（`$.ui.toast`）。
+- 桌面版或手機版要畫背景時，提供冰海場景，也就是直接寫在 `register.tsx` 裡的 SVG。
+- 在桌面版把 Claude 的每則回覆包上一圈淡框。
+
+兩個繪製用的 hook 只用 `$.ui.resolve` 取得 App 本身的 `Svg` 與 `Box` 元件。`hooks/make-colors.js` 負責把幾個基本色展開成完整的淺色與深色配色，只在模組載入時跑一次。
+
+這個外掛不連網、不讀寫檔案、不啟動任何程式，也不收集、儲存或傳送任何資料。它不載入外部圖片或字型，整個背景都來自 `register.tsx` 裡的 SVG。
+
 ## 已知限制
 
 - 回覆框的框線顏色是固定的，以深色模式為準。
