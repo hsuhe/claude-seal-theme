@@ -26,7 +26,7 @@ claude plugin marketplace add hsuhe/claude-seal-theme
 claude plugin install seal-theme@claude-seal-theme
 ```
 
-預設裝在 user 範圍，之後每個 session 都會套用，Claude 桌面版的 Code 分頁也會載入。開新對話就會看到主題。動態背景在桌面版與手機版顯示，回覆框樣式只在桌面版。
+預設裝在 user 範圍，你電腦上的每個 session 都會載入。主題只在 Claude 桌面版 Code 分頁的本機 session 顯示，在那裡開新對話就會看到。
 
 ## 更新
 
@@ -60,6 +60,7 @@ claude plugin marketplace remove claude-seal-theme
 
 ## 已知限制
 
+- 終端機、雲端 session 和手機 App（包括 Remote Control）都看不到這個主題。
 - 回覆框的框線顏色是固定的，以深色模式為準。
 
 ## 授權
