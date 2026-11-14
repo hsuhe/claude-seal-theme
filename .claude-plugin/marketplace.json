@@ -1,0 +1,5 @@
+{
+  "name": "claude-seal-theme",
+  "owner": { "name": "hsuhe" },
+  "plugins": [{ "name": "seal-theme", "source": "./" }]
+}
