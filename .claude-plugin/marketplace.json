@@ -1,5 +1,6 @@
 {
   "name": "claude-seal-theme",
   "owner": { "name": "hsuhe" },
+  "description": "Seal theme for Claude Code: an animated polar sea background with icy-mist and deep-sea colors.",
   "plugins": [{ "name": "seal-theme", "source": "./" }]
 }
