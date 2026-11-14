@@ -26,7 +26,7 @@ claude plugin marketplace add hsuhe/claude-seal-theme
 claude plugin install seal-theme@claude-seal-theme
 ```
 
-It installs at user scope by default, so it applies to every session, including the Code tab of the Claude desktop app. Start a new conversation to see the theme. The animated background shows in the desktop and mobile apps; the reply frame style is desktop only.
+It installs at user scope by default, so it loads in every session on your computer. The theme shows only in local sessions in the Code tab of the Claude desktop app: start a new conversation there to see it.
 
 ## Update
 
@@ -60,6 +60,7 @@ The plugin makes no network requests, doesn't read or write files, doesn't start
 
 ## Known limitations
 
+- The theme doesn't show in the terminal, in cloud sessions, or in the mobile app (including Remote Control sessions).
 - The reply frame's border color is fixed and tuned for dark mode.
 
 ## License
