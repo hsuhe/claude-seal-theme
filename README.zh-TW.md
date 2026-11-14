@@ -19,7 +19,7 @@ Claude Code 的主題 mod：冰霧與深海配色。對話背後是一片會動�
 
 ## 安裝
 
-需要 Claude Code 命令列版。在終端機執行：
+需要 Claude Code 命令列版 2.1.323 以上（可用 `claude --version` 查看）。在終端機執行：
 
 ```bash
 claude plugin marketplace add hsuhe/claude-seal-theme
@@ -27,6 +27,24 @@ claude plugin install seal-theme@claude-seal-theme
 ```
 
 預設裝在 user 範圍，之後每個 session 都會套用，Claude 桌面版的 Code 分頁也會載入。開新對話就會看到主題。動態背景在桌面版與手機版顯示，回覆框樣式只在桌面版。
+
+## 更新
+
+自己加入的 marketplace 預設不會自動更新。要取得新版，執行：
+
+```bash
+claude plugin marketplace update claude-seal-theme
+claude plugin update seal-theme@claude-seal-theme
+```
+
+重新啟動 Claude Code 後生效。
+
+## 移除
+
+```bash
+claude plugin uninstall seal-theme@claude-seal-theme
+claude plugin marketplace remove claude-seal-theme
+```
 
 ## 外掛會執行什麼
 
