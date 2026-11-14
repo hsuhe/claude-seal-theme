@@ -11,23 +11,23 @@ Claude Code 的主題 mod：冰霧與深海配色。對話背後是一片會動�
 
 ## 安裝
 
-動態背景在 Claude Code 桌面版與手機版顯示，回覆框樣式只在桌面版。
+動態背景在 Claude Code 桌面版與手機版顯示，回覆框樣式只在桌面版。以下兩種方法擇一，macOS、Windows 都適用。
 
-**桌面版**：點輸入框旁的 **+** → **Plugins** → **Add marketplace**，輸入 `hsuhe/claude-seal-theme`，再按 **Add plugin** 安裝 `seal-theme`。
+### 方法一：命令列
 
-**終端機裡的 Claude Code**：
-
-```
-/plugin install seal-theme --marketplace hsuhe/claude-seal-theme
-```
-
-出現 `Add marketplace?` 時輸入 `y`，選安裝範圍時直接按 Enter（user：之後每個 session 都套用）。
-
-**命令列**：
+電腦上已裝好 Claude Code 命令列版（終端機輸入 `claude` 有反應）時，執行：
 
 ```bash
 claude plugin install seal-theme --marketplace hsuhe/claude-seal-theme
 ```
+
+### 方法二：請 Claude 幫你裝（只有桌面版也可以）
+
+在 Claude Code 桌面版開新對話，貼上這段：
+
+> 請幫我安裝海豹主題：把 https://github.com/hsuhe/claude-seal-theme 下載到 `~/mods/seal-theme`（有 git 就用 git clone，沒有就下載 zip 解壓縮），然後在 `~/.claude/settings.json` 的 `env` 區塊加入 `"CLAUDE_CODE_PLUGIN_DIRS": "<上面那個資料夾的完整路徑>"`。如果已經有這個鍵，就把新路徑接在原本的值後面（macOS 用冒號 `:` 分隔，Windows 用分號 `;`）。做完告訴我。
+
+這個方法不會自動更新，主題有新版時重新下載一次即可。
 
 裝好後開新對話就會套用主題。
 
