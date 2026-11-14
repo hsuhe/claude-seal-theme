@@ -19,7 +19,7 @@ The previews show the background alone. In use, your conversation sits on top, a
 
 ## Install
 
-Requires the Claude Code CLI. In a terminal, run:
+Requires the Claude Code CLI, version 2.1.323 or later (`claude --version` shows yours). In a terminal, run:
 
 ```bash
 claude plugin marketplace add hsuhe/claude-seal-theme
@@ -27,6 +27,24 @@ claude plugin install seal-theme@claude-seal-theme
 ```
 
 It installs at user scope by default, so it applies to every session, including the Code tab of the Claude desktop app. Start a new conversation to see the theme. The animated background shows in the desktop and mobile apps; the reply frame style is desktop only.
+
+## Update
+
+Auto-update is off by default for marketplaces you add yourself. To get a new version, run:
+
+```bash
+claude plugin marketplace update claude-seal-theme
+claude plugin update seal-theme@claude-seal-theme
+```
+
+The update applies after you restart Claude Code.
+
+## Uninstall
+
+```bash
+claude plugin uninstall seal-theme@claude-seal-theme
+claude plugin marketplace remove claude-seal-theme
+```
 
 ## What this plugin runs
 
