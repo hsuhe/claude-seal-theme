@@ -50,7 +50,7 @@ claude plugin marketplace remove claude-seal-theme
 
 這個外掛是 mod：`hooks/register.tsx` 是 hooks module，Claude Code 會載入它並以你的權限執行（所有 mod 都是這樣）。它做的事只有以下這些：
 
-- session 開始時，套用海豹配色和動態背景（`$.theme.set`）。如果 App 畫不出來，會在狀態列顯示原因（`$.ui.status`）；如果配色檢查發現會讓桌面版畫不出主題的問題，會用 toast 顯示那一行（`$.ui.toast`）。
+- session 開始時，套用海豹配色和動態背景（`$.theme.set`）。如果配色檢查發現會讓桌面版畫不出主題的問題，會用 toast 顯示那一行（`$.ui.toast`）。
 - 桌面版或手機版要畫背景時，提供冰海場景，也就是直接寫在 `register.tsx` 裡的 SVG。
 - 在桌面版把 Claude 的每則回覆包上一圈淡框。
 

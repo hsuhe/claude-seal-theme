@@ -50,7 +50,7 @@ claude plugin marketplace remove claude-seal-theme
 
 This plugin is a mod: `hooks/register.tsx` is a hooks module that Claude Code loads and runs with your permissions, as it does every mod. This is everything it does:
 
-- When a session starts, it applies the seal color theme and the animated background (`$.theme.set`). If the app can't draw them, it shows the reason in the status line (`$.ui.status`). If the color check finds a problem that would stop the desktop app from painting the theme, it shows that line as a toast (`$.ui.toast`).
+- When a session starts, it applies the seal color theme and the animated background (`$.theme.set`). If the color check finds a problem that would stop the desktop app from painting the theme, it shows that line as a toast (`$.ui.toast`).
 - When the desktop or mobile app draws the background, it supplies the polar sea scene, an SVG written inline in `register.tsx`.
 - In the desktop app, it wraps each of Claude's replies in an outlined frame.
 
