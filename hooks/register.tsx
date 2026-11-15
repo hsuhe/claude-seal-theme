@@ -485,11 +485,9 @@ export const register: Register = on => {
     if (unpainted !== undefined) {
       $.ui.toast(unpainted)
     }
-    const set = await $.theme.set(LOOK)
-
-    if (!set.isDrawn) {
-      $.ui.status(set.reason)
-    }
+    // 這時 App 常常還沒接上，theme.set 會回 isDrawn: false；但主題整個 session 有效，
+    // App 接上後照樣會畫，所以不把 reason 放到狀態列（放了也沒人清，終端機還會一直掛著）。
+    await $.theme.set(LOOK)
 
     return next(e)
   })
