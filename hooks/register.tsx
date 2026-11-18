@@ -57,6 +57,7 @@ const LINE = 'stroke="#5f7a8c" stroke-linejoin="round"'
 const at = (x: string, y: string, body: string): string =>
   `<svg x="${x}" y="${y}" width="1" height="1" overflow="visible" style="overflow:visible">${body}</svg>`
 
+// 海豹的前鰭長在身體側面、頭後面一點，貼著側腹往後斜，不是從肚子底下長出來。
 // 趴著的海豹：頭朝左，肚子貼在 y=196，寬度約 72 到 384。
 const LYING_SEAL = `<g ${LINE} stroke-width="3">
 <g class="wag" fill="#7890a0">
@@ -68,7 +69,7 @@ const LYING_SEAL = `<g ${LINE} stroke-width="3">
 <g fill="#6f8798" opacity=".55" stroke="none">
 <circle cx="180" cy="120" r="3"/><circle cx="200" cy="128" r="5"/><circle cx="228" cy="140" r="4"/><circle cx="252" cy="150" r="3.5"/>
 </g>
-<path fill="#7890a0" d="M176 186 C186 170 212 172 226 192 C214 202 190 202 178 196 Z"/>
+<path fill="#7890a0" d="M175 153 C182 158 190 164 195 170 C199 175 199 179 195 180 C197 183 195 187 191 185 C191 189 187 189 183 184 C177 179 170 171 165 163 C161 156 168 149 175 153 Z"/>
 <ellipse cx="101" cy="156" rx="15" ry="11" fill="#c6d3db" stroke="none"/>
 <ellipse cx="113" cy="153" rx="7" ry="4" fill="#e8a6a0" opacity=".5" stroke="none"/>
 <ellipse cx="90" cy="150" rx="5" ry="3.6" fill="#1e2c36" stroke="none"/>
@@ -93,7 +94,7 @@ const SWIM_SEAL = `<g ${LINE} stroke-width="3">
 <g fill="#6f8798" opacity=".55" stroke="none">
 <circle cx="-56" cy="-36" r="3"/><circle cx="-30" cy="-38" r="5"/><circle cx="0" cy="-36" r="3.5"/><circle cx="26" cy="-30" r="4.5"/><circle cx="56" cy="-22" r="3"/><circle cx="-10" cy="-18" r="3"/><circle cx="34" cy="-10" r="2.5"/>
 </g>
-<path class="paddle" fill="#7890a0" d="M-66 40 C-60 54 -50 68 -34 78 C-30 74 -26 76 -22 80 C-18 74 -14 74 -10 76 C-14 60 -24 48 -40 38 Z"/>
+<path class="paddle" fill="#7890a0" d="M-76 8 C-68 10 -58 15 -52 20 C-46 24 -45 28 -49 30 C-46 33 -47 37 -51 36 C-50 40 -55 41 -60 38 C-68 34 -77 27 -84 20 C-90 14 -84 5 -76 8 Z"/>
 <ellipse cx="-139" cy="4" rx="14" ry="11" fill="#c6d3db" stroke="none"/>
 <ellipse cx="-124" cy="2" rx="7" ry="4" fill="#e8a6a0" opacity=".5" stroke="none"/>
 <ellipse cx="-151" cy="-2" rx="5" ry="3.6" fill="#1e2c36" stroke="none"/>
@@ -373,7 +374,7 @@ const STYLE = `<style>
 @keyframes sway { from { transform: translateX(-9px); } to { transform: translateX(9px); } }
 @keyframes tilt { from { transform: rotate(6deg); } to { transform: rotate(-6deg); } }
 @keyframes kick { from { transform: rotate(-9deg); } to { transform: rotate(11deg); } }
-@keyframes paddle { from { transform: rotate(-6deg); } to { transform: rotate(14deg); } }
+@keyframes paddle { from { transform: rotate(-4deg); } to { transform: rotate(10deg); } }
 @keyframes blink { 0%, 93%, 100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
 @keyframes puff { from { opacity: .8; transform: translate(0, 0); } to { opacity: 0; transform: translate(18px, -22px); } }
 @keyframes bob { from { transform: translateY(-2px) rotate(-.8deg); } to { transform: translateY(3px) rotate(.8deg); } }
