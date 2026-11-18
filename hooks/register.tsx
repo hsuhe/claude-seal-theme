@@ -57,6 +57,7 @@ const LINE = 'stroke="#5f7a8c" stroke-linejoin="round"'
 const at = (x: string, y: string, body: string): string =>
   `<svg x="${x}" y="${y}" width="1" height="1" overflow="visible" style="overflow:visible">${body}</svg>`
 
+// 海豹的前鰭長在身體側面、頭後面一點，不是從肚子底下長出來。
 // 趴著的海豹：頭朝左，肚子貼在 y=196，寬度約 72 到 384。
 const LYING_SEAL = `<g ${LINE} stroke-width="3">
 <g class="wag" fill="#7890a0">
@@ -68,7 +69,7 @@ const LYING_SEAL = `<g ${LINE} stroke-width="3">
 <g fill="#6f8798" opacity=".55" stroke="none">
 <circle cx="180" cy="120" r="3"/><circle cx="200" cy="128" r="5"/><circle cx="228" cy="140" r="4"/><circle cx="252" cy="150" r="3.5"/>
 </g>
-<path fill="#7890a0" d="M176 186 C186 170 212 172 226 192 C214 202 190 202 178 196 Z"/>
+<path fill="#7890a0" d="M171 153 C187 143 210 156 214 180 C199 184 177 174 169 163 Z"/>
 <ellipse cx="101" cy="156" rx="15" ry="11" fill="#c6d3db" stroke="none"/>
 <ellipse cx="113" cy="153" rx="7" ry="4" fill="#e8a6a0" opacity=".5" stroke="none"/>
 <ellipse cx="90" cy="150" rx="5" ry="3.6" fill="#1e2c36" stroke="none"/>
@@ -93,7 +94,7 @@ const SWIM_SEAL = `<g ${LINE} stroke-width="3">
 <g fill="#6f8798" opacity=".55" stroke="none">
 <circle cx="-56" cy="-36" r="3"/><circle cx="-30" cy="-38" r="5"/><circle cx="0" cy="-36" r="3.5"/><circle cx="26" cy="-30" r="4.5"/><circle cx="56" cy="-22" r="3"/><circle cx="-10" cy="-18" r="3"/><circle cx="34" cy="-10" r="2.5"/>
 </g>
-<path class="paddle" fill="#7890a0" d="M-66 40 C-60 54 -50 68 -34 78 C-30 74 -26 76 -22 80 C-18 74 -14 74 -10 76 C-14 60 -24 48 -40 38 Z"/>
+<path class="paddle" fill="#7890a0" d="M-79 13 C-73 27 -63 41 -47 51 C-43 47 -39 49 -35 53 C-31 47 -27 47 -23 49 C-27 33 -37 21 -53 11 Z"/>
 <ellipse cx="-139" cy="4" rx="14" ry="11" fill="#c6d3db" stroke="none"/>
 <ellipse cx="-124" cy="2" rx="7" ry="4" fill="#e8a6a0" opacity=".5" stroke="none"/>
 <ellipse cx="-151" cy="-2" rx="5" ry="3.6" fill="#1e2c36" stroke="none"/>
