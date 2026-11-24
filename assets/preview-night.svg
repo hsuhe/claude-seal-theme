@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><!-- README 預覽圖：hooks/register.tsx 的 SCENE，固定成深色模式（拿掉淺色的 @media 區塊），畫面固定 1600×900。改了場景要重新產生。 --><style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900"><!-- README 預覽圖（深色模式，會動）。由 scripts/previews.ts 從 hooks/scene.ts 的場景產生，不要手改。 --><style>
 :root { color-scheme: light dark; }
 .day { display: none; }
 .heave { animation: heave 6s ease-in-out infinite alternate; }

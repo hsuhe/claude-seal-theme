@@ -6,9 +6,9 @@ A Claude Code theme mod in icy-mist and deep-sea colors. Behind your conversatio
 
 | Dark mode (night) | Light mode (day) |
 | --- | --- |
-| ![The polar sea background in dark mode](assets/preview-night.svg) | ![The polar sea background in light mode](assets/preview-day.svg) |
+| <picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/preview-night-still.svg"><img src="assets/preview-night.svg" alt="The polar sea background in dark mode"></picture> | <picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/preview-day-still.svg"><img src="assets/preview-day.svg" alt="The polar sea background in light mode"></picture> |
 
-The previews show the background alone. In use, your conversation sits on top of it.
+The previews show the background alone. In use, your conversation sits on top of it. If your system is set to reduce motion, the previews switch to still versions.
 
 ## Features
 
@@ -51,12 +51,14 @@ claude plugin marketplace remove claude-seal-theme
 This plugin is a mod: `hooks/register.tsx` is a hooks module that Claude Code loads and runs with your permissions, as it does every mod. This is everything it does:
 
 - When a session starts, it applies the seal color theme and the animated background (`$.theme.set`). If the color check finds a problem that would stop the desktop app from painting the theme, it shows that line as a toast (`$.ui.toast`).
-- When the desktop or mobile app draws the background, it supplies the polar sea scene, an SVG written inline in `register.tsx`.
+- When the desktop or mobile app draws the background, it supplies the polar sea scene, an SVG written in `hooks/scene.ts`.
 - In the desktop app, it wraps each of Claude's replies in an outlined frame.
 
 The two drawing hooks use `$.ui.resolve` only to get the app's own `Svg` and `Box` components. `hooks/make-colors.js` turns a few base colors into the full light and dark color sets, once, when the module loads.
 
-The plugin makes no network requests, doesn't read or write files, doesn't start processes, and doesn't collect, store or send any data. It loads no external images or fonts: the whole background comes from the SVG inside `register.tsx`.
+The plugin makes no network requests, doesn't read or write files, doesn't start processes, and doesn't collect, store or send any data. It loads no external images or fonts: the whole background comes from the SVG in `hooks/scene.ts`.
+
+`scripts/previews.ts` only regenerates the README previews. Claude Code never loads it.
 
 ## Known limitations
 
