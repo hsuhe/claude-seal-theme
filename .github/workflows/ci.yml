@@ -18,9 +18,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    strategy:
+      # 一個版本失敗時另一個照樣跑完，才看得出是哪個版本壞掉。
+      fail-fast: false
+      matrix:
+        # 2.1.323 是 README 寫的最低需求，改最低需求時兩邊一起改；
+        # 2.1.331 是最近測過的版本，要換版時手動改這裡。
+        claude-code: ['2.1.323', '2.1.331']
     env:
-      # 固定用測試過的版本，要換版時手動改這裡。
-      CLAUDE_CODE_VERSION: 2.1.331
+      CLAUDE_CODE_VERSION: ${{ matrix.claude-code }}
       DISABLE_AUTOUPDATER: 1
       CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: 1
     steps:
