@@ -265,6 +265,7 @@ const STARS = [4, 11, 19, 27, 36, 44, 52, 63, 71, 79, 87, 95]
   .join('')
 
 // 從水面斜射下來的光柱：畫在一個會被拉滿畫面的 100×100 座標裡，由上往下漸淡。
+// 只在白天出現：夜裡的光柱一道道橫過整個對話區，會干擾讀程式碼。
 const RAYS = [
   [6, 5], [19, 3], [31, 7], [46, 4], [58, 6], [72, 3], [86, 5],
 ]
@@ -382,7 +383,7 @@ ${STARS}
 <circle class="day" cx="80%" cy="20" r="170" fill="url(#sun)"/>
 <rect y="${SURFACE}" width="100%" height="100%" fill="url(#water)"/>
 <rect y="${SURFACE}" width="100%" height="190" fill="url(#glow)"/>
-<svg class="rayset" y="${SURFACE}" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">${RAYS}</svg>
+<svg class="rayset day" y="${SURFACE}" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">${RAYS}</svg>
 <rect y="${SURFACE + 6}" width="100%" height="100%" fill="url(#driftB)"/>
 ${at('0', '100%', `<path class="far" fill="#143b51" opacity=".6" d="${ridgePath(FAR)}"/>`)}
 ${FAR_SCHOOL}
