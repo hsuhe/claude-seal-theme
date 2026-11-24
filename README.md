@@ -6,9 +6,9 @@ A Claude Code theme mod in icy-mist and deep-sea colors. Behind your conversatio
 
 | Dark mode (night) | Light mode (day) |
 | --- | --- |
-| ![The polar sea background in dark mode](assets/preview-night.png) | ![The polar sea background in light mode](assets/preview-day.png) |
+| ![The polar sea background in dark mode](assets/preview-night.svg) | ![The polar sea background in light mode](assets/preview-day.svg) |
 
-The previews show the background alone. In use, your conversation sits on top, and the seals, fish and waves move.
+The previews show the background alone. In use, your conversation sits on top of it.
 
 ## Features
 
