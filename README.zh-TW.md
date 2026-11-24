@@ -6,9 +6,9 @@ Claude Code 的主題 mod：冰霧與深海配色。對話背後是一片會動�
 
 | 深色模式（夜晚） | 淺色模式（白天） |
 | --- | --- |
-| ![深色模式的冰海背景](assets/preview-night.svg) | ![淺色模式的冰海背景](assets/preview-day.svg) |
+| <picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/preview-night-still.svg"><img src="assets/preview-night.svg" alt="深色模式的冰海背景"></picture> | <picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/preview-day-still.svg"><img src="assets/preview-day.svg" alt="淺色模式的冰海背景"></picture> |
 
-預覽圖只有背景本身，實際使用時對話會疊在上面。
+預覽圖只有背景本身，實際使用時對話會疊在上面。系統開了「減少動態效果」時，預覽圖會換成靜止的版本。
 
 ## 特色
 
@@ -51,12 +51,14 @@ claude plugin marketplace remove claude-seal-theme
 這個外掛是 mod：`hooks/register.tsx` 是 hooks module，Claude Code 會載入它並以你的權限執行（所有 mod 都是這樣）。它做的事只有以下這些：
 
 - session 開始時，套用海豹配色和動態背景（`$.theme.set`）。如果配色檢查發現會讓桌面版畫不出主題的問題，會用 toast 顯示那一行（`$.ui.toast`）。
-- 桌面版或手機版要畫背景時，提供冰海場景，也就是直接寫在 `register.tsx` 裡的 SVG。
+- 桌面版或手機版要畫背景時，提供冰海場景，也就是寫在 `hooks/scene.ts` 裡的 SVG。
 - 在桌面版把 Claude 的每則回覆包上一圈淡框。
 
 兩個繪製用的 hook 只用 `$.ui.resolve` 取得 App 本身的 `Svg` 與 `Box` 元件。`hooks/make-colors.js` 負責把幾個基本色展開成完整的淺色與深色配色，只在模組載入時跑一次。
 
-這個外掛不連網、不讀寫檔案、不啟動任何程式，也不收集、儲存或傳送任何資料。它不載入外部圖片或字型，整個背景都來自 `register.tsx` 裡的 SVG。
+這個外掛不連網、不讀寫檔案、不啟動任何程式，也不收集、儲存或傳送任何資料。它不載入外部圖片或字型，整個背景都來自 `hooks/scene.ts` 裡的 SVG。
+
+`scripts/previews.ts` 只用來重新產生 README 的預覽圖，Claude Code 不會載入它。
 
 ## 已知限制
 

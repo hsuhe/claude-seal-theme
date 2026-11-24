@@ -36,6 +36,10 @@ jobs:
         with:
           node-version: lts/*
 
+      # 改了 hooks/scene.ts 卻沒重新產生 README 預覽圖時，這一步會失敗。
+      - name: 檢查 README 預覽圖跟場景一致
+        run: node scripts/previews.ts --check
+
       - name: 安裝 Claude Code
         run: |
           npm install -g "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}"
