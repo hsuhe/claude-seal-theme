@@ -6,9 +6,9 @@ Claude Code 的主題 mod：冰霧與深海配色。對話背後是一片會動�
 
 | 深色模式（夜晚） | 淺色模式（白天） |
 | --- | --- |
-| ![深色模式的冰海背景](assets/preview-night.png) | ![淺色模式的冰海背景](assets/preview-day.png) |
+| ![深色模式的冰海背景](assets/preview-night.svg) | ![淺色模式的冰海背景](assets/preview-day.svg) |
 
-預覽圖只有背景本身；實際使用時對話會疊在上面，海豹、魚群和海浪都會動。
+預覽圖只有背景本身，實際使用時對話會疊在上面。
 
 ## 特色
 
