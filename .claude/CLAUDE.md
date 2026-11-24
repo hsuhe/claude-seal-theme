@@ -19,7 +19,7 @@ Claude Code 的主題 mod。Claude Code 載入 `hooks/hooks.json` 列的 `hooks/
 - 在同一個 PR 把 `.claude-plugin/plugin.json` 的 `version` 升一號，預設升 patch。版本號沒變，`claude plugin update` 就抓不到新版。
 - PR 說明寫明合併後要發 `vX.Y.Z`。
 
-只改 README、`assets/`、`tests/`、`scripts/`、`.github/`、這份 `CLAUDE.md`，不用發版，版本號也不動。
+只改 README、`assets/`、`tests/`、`scripts/`、`.github/`、`.claude/`（包括這份筆記），不用發版，版本號也不動。
 
 發版在 PR 合併、main 的 CI 通過之後：
 
